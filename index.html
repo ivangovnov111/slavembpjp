@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-friendly page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        h1, p {
+            text-align: center;
+        }
+        button {
+            background-color: #007dff;
+            color: white;
+            font-size: 2em;
+            border-radius: 10px;
+            border: 2px solid #808080;
+            display: none; /* добавлено */
+            margin: 20px auto;
+            padding: 5px;
+        }
+        button:active {
+            background-color: #008040;
+            border: 2px solid #007dff;
+        }
+        #download-btn {
+            /* стили кнопки */
+        }
+        #loading-img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Media Queries и другие стили */
+    .block1 {
+    margin-bottom: 30px;
+    }
+    
+    @media (min-width: 768px) {
+      img {
+        width: 320px;
+        height: 200px;
+      }
+    }
+    
+    </style>
+</head>
+<body>
+    <img src="img1.gif" alt="Image">
+    <h1>Mohon tunggu...</h1>
+  <div class="block1"></div>
+    <p>Browser sedang diperiksa...</p>
+    <img src="img2.gif" alt="Image" id="loading-img"> 
+  <div class="block1"></div>
+    <button id="download-btn" onclick="window.location.href='https://ya.ru'">Pergi ke situs.</button>
+  <div class="block1"></div>
+    <p>Anda akan diarahkan secara otomatis. Jika tidak, klik tombol di bawah.</p>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function(){
+                document.getElementById("download-btn").style.display = "block"; /* показываем кнопку */
+                document.getElementById("loading-img").style.display = "none"; /* скрываем картинку */
+            },5000);
+        }
+    </script>
+</body>
+</html>.
